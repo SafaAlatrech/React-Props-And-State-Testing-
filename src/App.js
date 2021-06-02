@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+// App Component = Parent component : 
 function App() {
+  
+  this.state = { 
+       parent : 'App component is Parent Component  '
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Hello React Js from parent Component
+      <Child name="Test Child"/>
+      State of this component is {this.state.parent}
     </div>
   );
+
+  
+}
+
+// Child Component 
+
+function Child (props) {
+  
+  return ( 
+  <p> Child Component and Props is :{props.name}</p>
+   )
 }
 
 export default App;
